@@ -5,7 +5,7 @@ date: 2020-04-03
 tags: optimization
 ---
 
-> a duality model : Internet Congestion Control By Network Utility Maximization
+> A duality model : Internet Congestion Control By Network Utility Maximization
 >
 > ref: http://netlab.caltech.edu/assets/publications/Low-200203-vegas.pdf
 
