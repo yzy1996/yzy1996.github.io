@@ -24,7 +24,6 @@ A network of routers is modeled by a set $$ L $$ of unidirectional links with tr
 
 the primal problem is:
 
-
 $$
 \max _{x \geq 0} \sum_{s} U_{s}\left(x_{s}\right)
 $$
@@ -38,23 +37,28 @@ where $$ U_{s}\left(x_{s}\right)=\log x_{s} $$
 If given routing matrix $$ R_{ls} $$ (1 if flow from source $$ s $$ uses link $$ l $$ , 0 otherwise), $$ \sum_{s \in S(l)} x_{s} = Rx $$ 
 
 **Proof**. By the Karush-Kuhn-Tuckertheorem a feasible source rate vector $$ x^* \geq 0 $$ is optimal if and only if there exists a vector $$ p^* = (p_l^* , l \in L) \geq 0 $$ such that, for all s,
+
 $$
 U_{s}^{\prime}\left(x_{s}^{*}\right)=\sum_{l \in L(s)} p_{l}^{*}
 $$
+
 and, for all $$ l $$ , $$ p^∗_l = 0 $$ if the aggregate source rate at link $$ l $$ is strictly less than the capacity $$ \sum_{s \in S(l)} x^*_s < c_l $$ (complementary slackness).
 
 ## Dual Probelm
 
 Associated with each link $$ l $$ is a dual variable $$ p_l $$ . Define the Lagrangian of (1-2) as:
+
 $$
 \begin{aligned}
 L(x, p) &=\sum_{s} U_{s}\left(x_{s}\right)+\sum_{l} p_{l}\left(c_{l} - \sum_{s \in S(l)} x_{s}\right) \\
 &=\sum_{s}\left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)+\sum_{l} p_{l} c_{l}
 \end{aligned}
 $$
+
 The objective function of the dual problem of (1-2) is $$ D(p):=\sup _{x \geq 0} L(x, p) $$ 
 
 Hence the dual problem is to choose the dual vector $$ p=\left(p_{l}, l \in L\right) $$ so as to 
+
 $$
 \min _{p \geq 0} D(p):=\sum_{s}\left(\sup _ {x_s \geq 0} \left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)\right)+\sum_{l} p_{l} c_{l}
 $$
@@ -64,9 +68,11 @@ $$
 $$
 
 Therefore, we can use iterative gradient projection algorithm to solve the dual problem
+
 $$
 p(t+1)=[p(t)-\alpha \nabla D(p(t))]^{+}
 $$
+
 Here $$ \alpha $$ us a constant stepsize, $$ [z]^{+}=\max \{0, z\} $$ . The structure of the dual problem allows a decentralized and distributed implementation of the above algorithm. 
 
 When we want to solve $$ \sup _ {x_s \geq 0} \left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right) $$ , it’s easy to get $$ x^*_s=\frac{1}{\sum_{l \in L(s)} p_l} $$ 
@@ -76,6 +82,7 @@ We have $$ D(p_l):= \sum_{s}\left(U_{s}(x_{s}^*)\right)-\sum_{s}\left(x_{s}^* \s
 So  $$ \nabla D(p_l(t)) = c_l - \sum_{s \in S(l)} x_s^*=c_l - \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} $$ 
 
 So (6) can be rewritten as 
+
 $$
 p_l(t+1)=\left[p_l(t)-\alpha \left(c_l - \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} \right)\right]^{+}
 $$
@@ -94,6 +101,7 @@ We have $$ S=\{s1,s2\} $$  $$ L=\{l1, l2, l3\} $$  $$ L(s1) = \{l1, l3\} $$  $$ 
 ​         $$ R= \left[ \begin{array}{cc} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{array} \right] $$  $$ x = \left[ \begin{array}{c} x1 \\ x2 \end{array} \right] $$  $$ p = \left[ \begin{array}{c} p1 \\ p2 \\p3 \end{array} \right] $$ 
 
 According to (7), we have 
+
 $$
 \begin{aligned}
 p_{l1}(t+1)
@@ -102,7 +110,9 @@ p_{l1}(t+1)
 &=\left[p_{l1}(t)-\alpha \left(c_{l1} - \frac{1}{p_{l1}+p_{l3}} \right)\right]^{+}
 \end{aligned}
 $$
+
 likewise
+
 $$
 p_{l2}(t+1)=\left[p_{l2}(t)-\alpha \left(c_{l2} - \frac{1}{p_{l2}+p_{l3}} \right)\right]^{+}
 $$
@@ -114,9 +124,11 @@ $$
 Now we can compute them separately [see code2](#code2). However, we can also write them into matrix form and compute at once [see code3](#code3).
 
 We need to know $$ \sum_{l \in L(s)} p_l = R^T p $$  $$ \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} = \frac{R}{R^T p} $$ , so
+
 $$
 p(t+1)=\left[p(t)-\alpha \left(c - \frac{R}{R^Tp} \right)\right]^{+}
 $$
+
 And finally $$ x^*_s=\frac{1}{\sum_{l \in L(s)} p_l} $$ , that is $$ x1 = \frac{1}{p1+p3} $$   $$ x2 = \frac{1}{p2+p3} $$ 
 
 ## Code
