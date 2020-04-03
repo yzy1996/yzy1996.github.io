@@ -5,8 +5,6 @@ date: 2020-04-03
 tags: optimization
 ---
 
-# A problem of TCP Vegas
-
 > a duality model : Internet Congestion Control By Network Utility Maximization
 >
 > ref: http://netlab.caltech.edu/assets/publications/Low-200203-vegas.pdf
@@ -22,7 +20,7 @@ tags: optimization
 
 ## Preliminaries
 
-A network of routers is modeled by a set $L$ of unidirectional links with transmission capacity $c_l$ , $l \in L$. It is shared by a set $S$ of sources. A source s traverses a subset $L(s) \subseteq L$ of links to the destination, and attains a utility $U_s(x_s)$ when it transmits at rate $x_s$. For each link $l$, let $S(l) = \{s \in S | l \in L(s)\}$ be the set of sources that uses link $l$. By definition $l \in L(s)$ if and only if $s \in S(l)$.
+A network of routers is modeled by a set $L$ of unidirectional links with transmission capacity $c_l$ , $l \in L$. It is shared by a set $S$ of sources. A source s traverses a subset $L(s) \subseteq L$ of links to the destination, and attains a utility $$U_s(x_s)$$ when it transmits at rate $x_s$. For each link $l$, let $S(l) = \{s \in S | l \in L(s)\}$ be the set of sources that uses link $l$. By definition $l \in L(s)$ if and only if $s \in S(l)$.
 
 
 
