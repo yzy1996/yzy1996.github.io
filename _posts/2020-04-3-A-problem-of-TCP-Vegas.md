@@ -46,8 +46,6 @@ and, for all $$ l $$ , $$ p^∗_l = 0 $$ if the aggregate source rate at link $$
 ## Dual Probelm
 
 Associated with each link $$ l $$ is a dual variable $$ p_l $$ . Define the Lagrangian of (1-2) as:
-
-
 $$
 \begin{aligned}
 L(x, p) &=\sum_{s} U_{s}\left(x_{s}\right)+\sum_{l} p_{l}\left(c_{l} - \sum_{s \in S(l)} x_{s}\right) \\
