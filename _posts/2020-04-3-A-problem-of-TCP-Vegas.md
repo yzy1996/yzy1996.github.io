@@ -18,11 +18,13 @@ tags: optimization
 
 ## Preliminaries
 
-A network of routers is modeled by a set $$ L $$ of unidirectional links with transmission capacity $$ c_l $$ , $$ l \in L $$ . It is shared by a set $$ S $$ of sources. A source s traverses a subset $$ L(s) \subseteq L $$ of links to the destination, and attains a utility $$ U_s(x_s) $$ when it transmits at rate $$ x_s $$ . For each link $$ l $$ , let $$ S(l) = \{s \in S | l \in L(s)\} $$ be the set of sources that uses link $$ l $$ . By definition $$ l \in L(s) $$ if and only if $$ s \in S(l) $$ .
+A network of routers is modeled by a set $$ L $$ of unidirectional links with transmission capacity $$ c_l $$ , $$ l \in L $$ . It is shared by a set $$ S $$ of sources. A source s traverses a subset $$ L(s) \subseteq L $$ of links to the destination, and attains a utility $$ U_s(x_s) $$ when it transmits at rate $$ x_s $$ . For each link $$ l $$ , let $$ S(l) = \{s \in S \| l \in L(s)\} $$ be the set of sources that uses link $$ l $$ . By definition $$ l \in L(s) $$ if and only if $$ s \in S(l) $$ .
 
 ## Objective of Vegas
 
 the primal problem is:
+
+
 $$
 \max _{x \geq 0} \sum_{s} U_{s}\left(x_{s}\right)
 $$
@@ -44,6 +46,8 @@ and, for all $$ l $$ , $$ p^∗_l = 0 $$ if the aggregate source rate at link $$
 ## Dual Probelm
 
 Associated with each link $$ l $$ is a dual variable $$ p_l $$ . Define the Lagrangian of (1-2) as:
+
+
 $$
 \begin{aligned}
 L(x, p) &=\sum_{s} U_{s}\left(x_{s}\right)+\sum_{l} p_{l}\left(c_{l} - \sum_{s \in S(l)} x_{s}\right) \\
