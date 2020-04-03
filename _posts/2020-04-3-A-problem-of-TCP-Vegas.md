@@ -37,7 +37,6 @@ where $$ U_{s}\left(x_{s}\right)=\log x_{s} $$
 If given routing matrix $$ R_{ls} $$ (1 if flow from source $$ s $$ uses link $$ l $$ , 0 otherwise), $$ \sum_{s \in S(l)} x_{s} = Rx $$ 
 
 **Proof**. By the Karush-Kuhn-Tuckertheorem a feasible source rate vector $$ x^* \geq 0 $$ is optimal if and only if there exists a vector $$ p^* = (p_l^* , l \in L) \geq 0 $$ such that, for all s,
-
 $$
 U_{s}^{\prime}\left(x_{s}^{*}\right)=\sum_{l \in L(s)} p_{l}^{*}
 $$
@@ -123,13 +122,13 @@ $$
 
 Now we can compute them separately [see code2](#code2). However, we can also write them into matrix form and compute at once [see code3](#code3).
 
-We need to know $$ \sum_{l \in L(s)} p_l = R^T p $$  $$ \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} = \frac{R}{R^T p} $$ , so
+We need to know $$ \sum_{l \in L(s)} p_l = R^T p $$   ,   $$ \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} = \frac{R}{R^T p} $$ , so
 
 $$
 p(t+1)=\left[p(t)-\alpha \left(c - \frac{R}{R^Tp} \right)\right]^{+}
 $$
 
-And finally $$ x^*_s=\frac{1}{\sum_{l \in L(s)} p_l} $$ , that is $$ x1 = \frac{1}{p1+p3} $$   $$ x2 = \frac{1}{p2+p3} $$ 
+And finally $$ x^*_s=\frac{1}{\sum_{l \in L(s)} p_l} $$   ,  that is $$ x1 = \frac{1}{p1+p3} $$   ,   $$ x2 = \frac{1}{p2+p3} $$ 
 
 ## Code
 
