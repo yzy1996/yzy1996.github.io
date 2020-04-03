@@ -58,3 +58,10 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+ 
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
