@@ -72,7 +72,7 @@ $$
 p(t+1)=[p(t)-\alpha \nabla D(p(t))]^{+}
 $$
 
-Here $$ \alpha $$ us a constant stepsize, $$ [z]^{+}=\max \{0, z\} $$ . The structure of the dual problem allows a decentralized and distributed implementation of the above algorithm. 
+Here $$ \alpha $$ is a constant stepsize, $$ [z]^{+}=\max \{0, z\} $$ . The structure of the dual problem allows a decentralized and distributed implementation of the above algorithm. 
 
 When we want to solve $$ \sup _ {x_s \geq 0} \left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right) $$ , it’s easy to get $$ x^*_s=\frac{1}{\sum_{l \in L(s)} p_l} $$ 
 
