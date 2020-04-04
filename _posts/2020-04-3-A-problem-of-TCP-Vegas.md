@@ -29,7 +29,7 @@ $$
 $$
 
 $$
-\text { subject to } \sum_{s \in S(l)} x_{s} \leq c_{l}, \quad l \in L \label{2}
+\text { subject to } \sum_{s \in S(l)} x_{s} \leq c_{l}, \quad l \in L \tag{2}
 $$
 
 where $$ U_{s}\left(x_{s}\right)=\log x_{s} $$
@@ -38,19 +38,19 @@ If given routing matrix $$ R_{ls} $$ (1 if flow from source $$ s $$ uses link $$
 
 **Proof**. By the Karush-Kuhn-Tuckertheorem a feasible source rate vector $$ x^* \geq 0 $$ is optimal if and only if there exists a vector $$ p^* = (p_l^* , l \in L) \geq 0 $$ such that, for all s,
 $$
-U_{s}^{\prime}\left(x_{s}^{*}\right)=\sum_{l \in L(s)} p_{l}^{*} \label{3}
+U_{s}^{\prime}\left(x_{s}^{*}\right)=\sum_{l \in L(s)} p_{l}^{*} \tag{3}
 $$
 
 and, for all $$ l $$ , $$ p^∗_l = 0 $$ if the aggregate source rate at link $$ l $$ is strictly less than the capacity $$ \sum_{s \in S(l)} x^*_s < c_l $$ (complementary slackness).
 
 ## Dual Problem
 
-Associated with each link $$ l $$ is a dual variable $$ p_l $$ . Define the Lagrangian of $\eqref{1}$-$\eqref{2}$ as:
+Associated with each link $$ l $$ is a dual variable $$ p_l $$ . Define the Lagrangian of (1-2) as:
 
 $$
 \begin{aligned}
 L(x, p) &=\sum_{s} U_{s}\left(x_{s}\right)+\sum_{l} p_{l}\left(c_{l} - \sum_{s \in S(l)} x_{s}\right) \\
-&=\sum_{s}\left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)+\sum_{l} p_{l} c_{l} \label{4}
+&=\sum_{s}\left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)+\sum_{l} p_{l} c_{l}
 \end{aligned}
 $$
 
@@ -59,17 +59,17 @@ The objective function of the dual problem of (1-2) is $$ D(p):=\sup _{x \geq 0}
 Hence the dual problem is to choose the dual vector $$ p=\left(p_{l}, l \in L\right) $$ so as to 
 
 $$
-\min _{p \geq 0} D(p):=\sum_{s}\left(\sup _ {x_s \geq 0} \left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)\right)+\sum_{l} p_{l} c_{l} \label{5}
+\min _{p \geq 0} D(p):=\sum_{s}\left(\sup _ {x_s \geq 0} \left(U_{s}\left(x_{s}\right)-x_{s} \sum_{l \in L(s)} p_{l}\right)\right)+\sum_{l} p_{l} c_{l} \tag{4}
 $$
 
 $$
-\text { subject to } p_l \geq 0 \label{6}
+\text { subject to } p_l \geq 0 \tag{5}
 $$
 
 Therefore, we can use iterative gradient projection algorithm to solve the dual problem
 
 $$
-p(t+1)=[p(t)-\alpha \nabla D(p(t))]^{+} \label{7}
+p(t+1)=[p(t)-\alpha \nabla D(p(t))]^{+} \tag{6}
 $$
 
 Here $$ \alpha $$ is a constant stepsize, $$ [z]^{+}=\max \{0, z\} $$ . The structure of the dual problem allows a decentralized and distributed implementation of the above algorithm. 
@@ -83,7 +83,7 @@ So  $$ \nabla D(p_l(t)) = c_l - \sum_{s \in S(l)} x_s^*=c_l - \sum_{s \in S(l)} 
 So (6) can be rewritten as 
 
 $$
-p_l(t+1)=\left[p_l(t)-\alpha \left(c_l - \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} \right)\right]^{+} \label{8}
+p_l(t+1)=\left[p_l(t)-\alpha \left(c_l - \sum_{s \in S(l)} \frac{1}{\sum_{l \in L(s)} p_l} \right)\right]^{+} \tag{7}
 $$
 
 
@@ -99,7 +99,7 @@ We have $$ S=\{s1,s2\} $$  $$ L=\{l1, l2, l3\} $$  $$ L(s1) = \{l1, l3\} $$  $$ 
 
 ​         $$ R= \left[ \begin{array}{cc} 1 & 0 \\ 0 & 1 \\ 1 & 1 \end{array} \right] $$  $$ x = \left[ \begin{array}{c} x1 \\ x2 \end{array} \right] $$  $$ p = \left[ \begin{array}{c} p1 \\ p2 \\p3 \end{array} \right] $$ 
 
-According to $\eqref{8}$, we have 
+According to (7), we have 
 
 $$
 \begin{aligned}
