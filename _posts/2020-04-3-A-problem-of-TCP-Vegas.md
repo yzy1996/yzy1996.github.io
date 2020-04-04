@@ -25,7 +25,7 @@ A network of routers is modeled by a set $$ L $$ of unidirectional links with tr
 the primal problem is:
 
 $$
-\max _{x \geq 0} \sum_{s} U_{s}\left(x_{s}\right) \label{1}
+\max _{x \geq 0} \sum_{s} U_{s}\left(x_{s}\right) \tag{1}
 $$
 
 $$
