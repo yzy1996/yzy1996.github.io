@@ -8,15 +8,7 @@ permalink: /about/
 
 <div style="margin: auto; width: 40%">
   <img src="{{ site.url }}/assets/profile_photo.jpg" style="display:block; margin-left:auto; margin-right:auto; border-radius:50%; width:75%;">
-  
-  <p style="text-align:center; margin-top:5%; margin-bottom:0%; font-size: 140%;">
-    Zhiyuan Yang
-  </p>
-  <p style="text-align:center; margin:0%;">
-    <a href="https://github.com/yzy1996">
-      {% include icon.html id="github" title="github" %}
-    </a>
-  </p>
+
 </div>
 <br style="line-height:10%;">
 
