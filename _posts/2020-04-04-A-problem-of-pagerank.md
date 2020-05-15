@@ -13,8 +13,7 @@ tags: optimization
 
 **The solution:**
 
-![11](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120947.svg)
-{: style="width: 100%;" class="center"}
+![11](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120947.svg){: style="width: 100%;" class="center"}
 
 ![1](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120952.svg)
 
