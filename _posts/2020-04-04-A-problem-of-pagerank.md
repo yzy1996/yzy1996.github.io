@@ -30,24 +30,26 @@ tags: optimization
 The main idea is how we donate the influence of $$ \alpha $$ in the probability of $$ \pi $$ 
 
 we have
+
 $$
 \begin{aligned}
 & \pi = \alpha P \pi + (1-\alpha)v \\
 & 1^T \pi = 1
 \end{aligned}
 $$
+
 so we can get
+
 $$
 \begin{aligned}
 & \pi = (1 - \alpha)(I - \alpha P)^{-1} v \\
 & \pi = \frac{1 - \alpha}{\det(I - \alpha P)}(I - \alpha P)^* v
 \end{aligned}
 $$
+
 here, $$ P \in R^{2n \times 2n} $$ and we only look at $$ \pi[1:n] $$ (nodes $$ A, B, \dots $$). $$ \frac{1 - \alpha}{\det(I - \alpha P)} $$  and $$ v $$ are same roles in each entry of $$ \pi $$ 
 
 let $$ A = (I - \alpha P)^* $$ and we only need to see the sum of each row $$ \sum_{j=1}^{n} A_{ij} $$
-
-
 
 **Matlab Code:**
 
