@@ -17,9 +17,9 @@ tags: optimization
 
 ![1](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120952.svg)
 
-![22](D:\OneDrive - City University of Hong Kong\Github\Artificial-Intelligence\Machine-Learning\Homework\CS6491\Midterm\pagerank problem\22.svg)
+![22](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120958.svg)
 
-![2](D:\OneDrive - City University of Hong Kong\Github\Artificial-Intelligence\Machine-Learning\Homework\CS6491\Midterm\pagerank problem\2.svg)
+![2](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515120957.svg)
 
 ![33](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200515121002.svg)
 
