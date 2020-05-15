@@ -27,7 +27,7 @@ tags: optimization
 
 **Deep thinking:** 
 
-The main idea is how we donate the influence of $ \alpha $ in the probability of $\pi$ 
+The main idea is how we donate the influence of $$ \alpha $$ in the probability of $$ \pi $$ 
 
 we have
 $$
@@ -39,9 +39,9 @@ $$
 \pi = (1 - \alpha)(I - \alpha P)^{-1} v \\
 \pi = \frac{1 - \alpha}{\det(I - \alpha P)}(I - \alpha P)^* v
 $$
-here, $P \in R^{2n \times 2n}$ and we only look at $\pi[1:n]$ (nodes $A, B, \dots$). $\frac{1 - \alpha}{\det(I - \alpha P)}$  and $v$ are same roles in each entry of $\pi$ 
+here, $$ P \in R^{2n \times 2n} $$ and we only look at $$ \pi[1:n] $$ (nodes $$ A, B, \dots $$). $$ \frac{1 - \alpha}{\det(I - \alpha P)} $$  and $$ v $$ are same roles in each entry of $$ \pi $$ 
 
-let $A = (I - \alpha P)^*$ and we only need to see the sum of each row $\sum_{j=1}^{n} A_{ij}$
+let $$ A = (I - \alpha P)^* $$ and we only need to see the sum of each row $$ \sum_{j=1}^{n} A_{ij} $$
 
 
 
