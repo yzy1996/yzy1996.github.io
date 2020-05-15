@@ -30,9 +30,9 @@ tags: optimization
 The main idea is how we donate the influence of $\alpha$ in the probability of $\pi$ 
 
 we have
-$$
+$$ 
 \pi = \alpha P \pi + (1-\alpha)v \\
-1^T \pi = 1
+1^T \pi = 1 
 $$
 so we can get
 $$
