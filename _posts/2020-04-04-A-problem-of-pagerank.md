@@ -9,7 +9,7 @@ tags: optimization
 
 **1. A problem from [Exercise 5.14, Mining of Massive Datasets](http://infolab.stanford.edu/~ullman/mmds/ch5.pdf)**
 
-> Construct, for any integer $n$, a Web such that, depending on $\alpha$, any of the $n$ nodes can have the highest PageRank among those $n$. It is allowed for there to be other nodes in the Web besides these $n$.
+> Construct, for any integer $$ n $$, a Web such that, depending on $$ \alpha $$, any of the $$ n $$ nodes can have the highest PageRank among those $$ n $$. It is allowed for there to be other nodes in the Web besides these $$ n $$.
 
 **The solution:**
 
