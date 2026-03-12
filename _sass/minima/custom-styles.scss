@@ -1,2 +1,152 @@
-// Placeholder to allow defining custom styles that override everything else.
-// (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+// ─── Homepage profile intro ───────────────────────────────────────────────────
+
+.profile-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: 2rem 0 2.5rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.profile-photo-wrapper {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.profile-bio {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  letter-spacing: -0.5px;
+}
+
+.profile-subtitle {
+  color: $brand-color;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.profile-links {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+
+  a {
+    color: $link-base-color;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  .dot-sep {
+    color: #bbb;
+    margin: 0 0.4rem;
+  }
+}
+
+
+// ─── About page header ────────────────────────────────────────────────────────
+
+.about-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 2rem;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.about-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  flex-shrink: 0;
+}
+
+.about-info {
+  flex: 1;
+  padding-top: 0.4rem;
+}
+
+.about-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.about-position {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 0.1rem;
+}
+
+.about-affiliation {
+  font-size: 0.95rem;
+  color: $brand-color;
+  margin-bottom: 0.6rem;
+}
+
+.about-contact {
+  font-size: 0.9rem;
+  a {
+    color: $link-base-color;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+
+// ─── General typography improvements ─────────────────────────────────────────
+
+.site-title {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+a {
+  transition: color 0.15s ease;
+}
+
+.post-list > li {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.8rem;
+}
+
+.post-link {
+  font-weight: 500;
+  @include relative-font-size(1.25);
+}
+
+.post-meta {
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 1.5rem 0;
+}
