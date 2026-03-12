@@ -4,3 +4,21 @@
   1. Head over to https://realfavicongenerator.net/ to add your own favicons.
   2. Customize default _includes/custom-head.html in your source directory and insert the given code snippet.
 {% endcomment %}
+
+<script>
+(function () {
+  var lang = localStorage.getItem('preferred-lang') || 'en';
+  document.documentElement.setAttribute('data-lang', lang);
+  document.addEventListener('DOMContentLoaded', function () {
+    var btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    btn.textContent = lang === 'en' ? '中文' : 'EN';
+    btn.addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-lang') === 'en' ? 'zh' : 'en';
+      document.documentElement.setAttribute('data-lang', next);
+      localStorage.setItem('preferred-lang', next);
+      btn.textContent = next === 'en' ? '中文' : 'EN';
+    });
+  });
+}());
+</script>

@@ -21,9 +21,13 @@
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            <a class="page-link" href="{{ my_page.url | relative_url }}">
+              <span lang="en">{{ my_page.title | escape }}</span>
+              {%- if my_page.title_zh -%}<span lang="zh">{{ my_page.title_zh }}</span>{%- endif -%}
+            </a>
             {%- endif -%}
           {%- endfor -%}
+          <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">中文</button>
         </div>
       </nav>
     {%- endif -%}

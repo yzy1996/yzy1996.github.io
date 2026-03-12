@@ -150,3 +150,29 @@ hr {
   border-top: 1px solid #e8e8e8;
   margin: 1.5rem 0;
 }
+
+
+// ─── Language switching ────────────────────────────────────────────────────────
+
+html:not([data-lang="zh"]) [lang="zh"] { display: none; }
+html[data-lang="zh"] [lang="en"] { display: none; }
+
+.lang-toggle {
+  background: none;
+  border: 1px solid $brand-color;
+  color: $brand-color;
+  border-radius: 3px;
+  padding: 1px 8px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  margin-left: 0.8rem;
+  font-family: inherit;
+  line-height: 1.8;
+  transition: background 0.15s ease, color 0.15s ease;
+  vertical-align: middle;
+
+  &:hover {
+    background: $brand-color;
+    color: white;
+  }
+}
